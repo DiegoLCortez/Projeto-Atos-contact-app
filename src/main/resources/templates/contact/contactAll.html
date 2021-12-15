@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>ContactApp</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<link type="text/css" rel="stylesheet" href="style/myStyle.css" />
+</head>
+<body>
+	<header>
+		<div id="nav-info" class="row">
+			<div class="col s2">
+				<a href="/home" class="brand-logo"><img class="responsive-img" src="/img/info/logo1.png" ></a>
+			</div>
+			<div class="col s8"></div>
+			<div class="col s2 center-align">
+	    		<a href="/contacts"><button class="waves-effect waves-orange btn deep-orange darken-4">Solicitações Abertas</button></a>
+	    	</div>
+		</div>
+	</header>
+	<h1 id="h1-nav" class="center-align">Todas as Solicitações</h1>
+	
+	<table class="container">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Celular</th>
+				<th>Email</th>
+				<th>Pacote</th>
+				<th>Data</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="contact : ${contacts}">
+				<td>
+				<a th:href="${(#mvc.url('CC#historicoContact').arg(0, contact.email)).build()}" value="" name="email">
+				<span th:text="${contact.nome}"></span></a></td>
+				<td><span th:text="${contact.celular}"></span></td>
+				<td><span th:text="${contact.email}"></span></td>
+				<td><span th:text="${contact.pacote}"></span></td>
+				<td><span th:text="${contact.data}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

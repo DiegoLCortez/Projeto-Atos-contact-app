@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>ContactApp</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<link type="text/css" rel="stylesheet" href="style/myStyle.css" />
+</head>
+<body>
+	<header id="header-info">
+		<div id="nav-info" class="row">
+			<div class="col s2">
+				<a href="/home" class="brand-logo"><img class="responsive-img" src="/img/info/logo1.png" ></a>
+			</div>
+			<div class="col s7"></div>
+			<div class="col s2 center-align waves-effect waves-orange btn-flat">
+	    		<a href="/contactform" class="black-text">Solicitar Contato</a>
+	    	</div>
+			<div class="col s1">
+			      <ul class="section table-of-contents">
+			        <li><a href="#quem-sou-eu">Sobre mim</a></li>
+			        <li><a href="#pacotes">Pacotes</a></li>
+			        <li><a href="#duvidas">Dúvidas</a></li>
+			        <li><a href="#regras">Regras</a></li>
+			      </ul>
+			</div>
+		</div>
+	</header>
+	
+	<div id="quem-sou-eu" class="row">
+		<div class="col s5 push-s2">
+			<img class="responsive-img" src="/img/info/quemSouEu.png" >
+		</div>
+	</div>
+	
+	<div id="pacotes" class="row">
+		<div class="col s5 push-s4">
+			<img class="responsive-img" src="/img/info/pacotes.png" >
+		</div>
+	</div>
+	
+	<div id="duvidas" class="row">
+		<div class="col s5 push-s2">
+			<img class="responsive-img" src="/img/info/duvidas.png" >
+		</div>
+	</div>
+	
+	<div id="regras" class="row">
+		<div class="col s5 push-s4">
+			<img class="responsive-img" src="/img/info/regras.png" >
+		</div>
+	</div>
+		
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

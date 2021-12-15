@@ -1,0 +1,36 @@
+html, body {
+	scroll-behavior: smooth;
+}
+
+#logo-home {
+	margin-top: 20px;
+}
+
+#carousel {
+	margin-bottom: 50px;
+}
+
+#insta {
+	width: 20%;
+}
+
+#header-info {
+	position: fixed;
+	z-index: 1;
+	padding-bottom: 100px;
+}
+
+#nav-info {
+	display: flex;
+	align-items: center;
+}
+
+#header-form {
+	position: fixed;
+	z-index: 1;
+	padding-bottom: 100px;
+}
+
+#h1-nav {
+	margin-top: -50px;
+}

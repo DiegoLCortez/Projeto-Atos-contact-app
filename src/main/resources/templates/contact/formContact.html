@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>formContact</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<link type="text/css" rel="stylesheet" href="style/myStyle.css" />
+</head>
+<body>
+	<header>
+		<div id="nav-info" class="row">
+			<div class="col s2">
+				<a href="/home" class="brand-logo"><img class="responsive-img" src="/img/info/logo1.png" ></a>
+			</div>
+			<div class="col s8"></div>
+			<div class="col s2 center-align">
+	    		<a href="/info"><button class="waves-effect waves-orange btn deep-orange darken-4">Informações</button></a>
+	    	</div>
+		</div>
+	</header>
+
+	<h1 id="h1-nav" class="center-align">Cadastro de Solicitação</h1>
+	
+	<form class="container" method="post">
+		<div class="row">
+			<div class="input-field col s9">
+				<input id="nome" type="text" class="validate" value="" name="nome" />
+				<label for="nome">Nome</label>
+			</div>
+			<div class="input-field col s3">
+				<input  id="celular" type="text" class="validate" value="" name="celular" />
+				<label for="celular">Celular</label>
+			</div>
+		</div>
+		<div class="row">			
+			<div class="input-field col s6">
+				<input  id="email" type="email" class="validate" value="" name="email" />
+				<label for="email">Email</label>
+				<span class="helper-text" data-error="Email inválido" data-success=""></span>
+			</div>
+			<div class="input-field col s3">
+			    <select id="pacote" name="pacote">
+			      <option value="" disabled selected>Escolha seu pacote</option>
+			      <option value="Pacote Mini">Pacote Mini</option>
+			      <option value="Pacote Essencial">Pacote Essencial</option>
+			      <option value="Pacote Completo">Pacote Completo</option>
+			    </select>
+			    <label for="pacote">Pacote</label>
+			  </div>
+			<div class="input-field col s3">
+				<input id="data" name="data" value="" type="text" class="datepicker">
+				<label for="data">Data</label>
+			</div>
+		</div>
+		<div class="center-align">
+			<button class="waves-effect waves-orange btn deep-orange darken-4" type="submit">Enviar</button>
+			<div class="alert alert-success alert-dismissible" role="alert" th:if="${not #strings.isEmpty(mensagemErro)}">
+				<span class="red-text text-accent-4" th:text="${mensagemErro}"></span>
+			</div>
+			<div class="alert alert-success alert-dismissible" role="alert" th:if="${not #strings.isEmpty(mensagemSucesso)}">
+				<span class="teal-text text-accent-3" th:text="${mensagemSucesso}"></span>
+			</div>
+		</div>		
+	</form>
+	
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    var elems = document.querySelectorAll('select');
+		    M.FormSelect.init(elems);
+		    
+		    var elems = document.querySelectorAll('.datepicker');
+		    M.Datepicker.init(elems, {
+		    	format:'dd/mm/yyyy',
+		    	i18n:{
+		    		cancel:'Cancelar',
+		    		months:[
+		    			  'Janeiro',
+		    			  'Fevereiro',
+		    			  'Março',
+		    			  'Abril',
+		    			  'Maio',
+		    			  'Junho',
+		    			  'Julho',
+		    			  'Agosto',
+		    			  'Setembro',
+		    			  'Outubro',
+		    			  'Novembro',
+		    			  'Dezembro'
+		    			],
+		    		monthsShort:[
+		    			  'Jan',
+		    			  'Fev',
+		    			  'Mar',
+		    			  'Abr',
+		    			  'Maio',
+		    			  'Jun',
+		    			  'Jul',
+		    			  'Ago',
+		    			  'Set',
+		    			  'Out',
+		    			  'Nov',
+		    			  'Dez'
+		    			],
+		    		weekdays:[
+		    			  'Domingo',
+		    			  'Segunda',
+		    			  'Terça',
+		    			  'Quarta',
+		    			  'Quinta',
+		    			  'Sexta',
+		    			  'Sábado'
+		    			],
+		    		weekdaysShort:[
+		    			  'Dom',
+		    			  'Seg',
+		    			  'Terç',
+		    			  'Qua',
+		    			  'Qui',
+		    			  'Sex',
+		    			  'Sáb'
+		    			],
+		    		weekdaysAbbrev:['D','S','T','Q','Q','S','S']
+		    	}
+		    });
+		});
+	</script>
+</body>
+</html>
