@@ -1,5 +1,7 @@
 package diego.contactapp.controllers;
 
+import java.sql.Timestamp;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +63,15 @@ public class ContactController {
 		mv.addObject("contacts", contacts);
 		
 		return mv;
+	}
+	
+	@RequestMapping("/delete/{id}")
+	public String deleteAt(@PathVariable("id") long id) {
+		Contact c = cr.findById(id);
+		c.setDeletedAt(new Timestamp(System.currentTimeMillis()));
+		cr.save(c);
+		
+		return "redirect:/contacts";
 	}
 	
 }

@@ -36,6 +36,7 @@
 				<th>Email</th>
 				<th>Pacote</th>
 				<th>Data</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -47,6 +48,10 @@
 				<td><span th:text="${contact.email}"></span></td>
 				<td><span th:text="${contact.pacote}"></span></td>
 				<td><span th:text="${contact.data}"></span></td>
+				<td>
+					<a th:href="${(#mvc.url('CC#deleteAt').arg(0, contact.id)).build()}" value="" name="id"
+					 class="waves-effect waves-orange btn deep-orange darken-4">Deletar</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
