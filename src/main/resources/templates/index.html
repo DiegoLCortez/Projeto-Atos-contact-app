@@ -22,7 +22,7 @@
 			</div>
 			<div class="col s8"></div>
 			<div class="col s2 center-align">
-	    		<a href="/contacts-all"><button class="waves-effect waves-orange btn deep-orange darken-4">Todas as Solicitações</button></a>
+	    		<a href="/contacts-all"><button class="waves-effect waves-orange btn amber darken-4">Todas as Solicitações</button></a>
 	    	</div>
 		</div>
 	</header>
@@ -36,7 +36,7 @@
 				<th>Email</th>
 				<th>Pacote</th>
 				<th>Data</th>
-				<th></th>
+				<th class="td-concluido">Concluído</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -48,9 +48,9 @@
 				<td><span th:text="${contact.email}"></span></td>
 				<td><span th:text="${contact.pacote}"></span></td>
 				<td><span th:text="${contact.data}"></span></td>
-				<td>
+				<td class="td-concluido">
 					<a th:href="${(#mvc.url('CC#deleteAt').arg(0, contact.id)).build()}" value="" name="id"
-					 class="waves-effect waves-orange btn deep-orange darken-4">Deletar</a>
+					 class="btn-floating btn waves-effect waves-light amber darken-4"><i class="material-icons">done</i></a>
 				</td>
 			</tr>
 		</tbody>

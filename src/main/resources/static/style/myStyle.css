@@ -2,6 +2,35 @@ html, body {
 	scroll-behavior: smooth;
 }
 
+.datepicker-date-display {
+  background-color: #ff6f00;
+}
+.is-today .datepicker-day-button {
+  color: #ff6f00;
+}
+
+.datepicker-table td.is-selected {
+  background-color: #3e2723;
+  opacity: 0.5;
+}
+
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+	color: #ff6f00;
+}
+
+.datepicker-table abbr {
+	color: #ff6f00;
+}
+
+.datepicker-controls .select-month input {
+	width: 80px;
+}
+
+.td-concluido {
+	display: flex;
+	justify-content: center;
+}
+
 #logo-home {
 	margin-top: 20px;
 }

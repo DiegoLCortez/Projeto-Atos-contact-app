@@ -22,7 +22,7 @@
 			</div>
 			<div class="col s8"></div>
 			<div class="col s2 center-align">
-	    		<a href="/info"><button class="waves-effect waves-orange btn deep-orange darken-4">Informações</button></a>
+	    		<a href="/info"><button class="waves-effect waves-orange btn amber darken-4">Informações</button></a>
 	    	</div>
 		</div>
 	</header>
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 		<div class="center-align">
-			<button class="waves-effect waves-orange btn deep-orange darken-4" type="submit">Enviar</button>
+			<button class="waves-effect waves-orange btn amber darken-4" type="submit">Enviar</button>
 			<div class="alert alert-success alert-dismissible" role="alert" th:if="${not #strings.isEmpty(mensagemErro)}">
 				<span class="red-text text-accent-4" th:text="${mensagemErro}"></span>
 			</div>
@@ -75,12 +75,17 @@
 	
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
+			const today = new Date();
+			const tomorrow = new Date(today);
+			tomorrow.setDate(tomorrow.getDate() + 1);
+			
 		    var elems = document.querySelectorAll('select');
 		    M.FormSelect.init(elems);
 		    
 		    var elems = document.querySelectorAll('.datepicker');
 		    M.Datepicker.init(elems, {
 		    	format:'dd/mm/yyyy',
+		    	minDate: tomorrow,
 		    	i18n:{
 		    		cancel:'Cancelar',
 		    		months:[
